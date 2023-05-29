@@ -1,0 +1,32 @@
+.news{
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #191919;
+}
+.news-text{
+    text-align: center;
+}
+.news h2{
+    color: #fff;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+.news input{
+    margin-right: 7px;
+    outline: none;
+}
+.news button{
+    cursor: pointer;
+}
+.news button:hover{
+    background-color:#FF0000;
+    color: #fff;
+}
+.news input, .news button{
+    font-size: 17px;
+    padding: 7px;
+    border: none;
+}
