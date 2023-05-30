@@ -20,10 +20,10 @@ function Header() {
 
     const scrollToTop = () => {
         window.scrollTo({
-          top: 0,
-          behavior: "smooth",
+            top: 0,
+            behavior: 'smooth',
         });
-      };
+    };
 
     return (
         <>
@@ -31,7 +31,7 @@ function Header() {
                 <div className="container">
                     <div className={`nav-container ${Sticky ? 'cont-sticky' : ''}`}>
                         <div className="menu" onClick={() => setToggle(!Toggle)}>
-                            <FontAwesomeIcon icon={faBars} />
+                            <FontAwesomeIcon icon={faBars} className="menu-bars" />
                         </div>
                         <div className="nav-logo">
                             <Link to="/">
@@ -41,13 +41,13 @@ function Header() {
                         <nav>
                             <ul className={Toggle ? 'toggle' : ''} onClick={() => setToggle(false)}>
                                 <li>
-                                    <Link to="/">CATEGORIES</Link>
+                                    <Link to="/categories/all">CATEGORIES</Link>
                                 </li>
                                 <li>
                                     <Link to="/">PRODUCT PAGE</Link>
                                 </li>
                                 <li className="close">
-                                    <FontAwesomeIcon icon={faXmark} />
+                                    <FontAwesomeIcon icon={faXmark} className="menu-close" />
                                 </li>
                             </ul>
                             <div className="nav-cart">
