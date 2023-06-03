@@ -116,3 +116,7 @@ a {
 .filter-btns button:hover {
     border: 2px solid rgba(0, 0, 0, .5);
 }
+.active button{
+    background: #333;
+    color: #fff;
+}

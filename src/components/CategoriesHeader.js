@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
@@ -20,27 +20,55 @@ function CategoriesHeader() {
                         <h3>{btnName}</h3>
                     </div>
                     <div className="filter-btns">
-                        <Link to="all" onClick={() => handleBtnName('all')}>
+                        <NavLink
+                            to="all"
+                            className={({ isActive }) => (isActive ? 'active' : '')}
+                            onClick={() => handleBtnName('all')}
+                        >
                             <button>All</button>
-                        </Link>
-                        <Link to="furnitures">
-                            <button onClick={() => handleBtnName('furnitures')}>Furnitures</button>
-                        </Link>
-                        <Link to="electronics">
-                            <button onClick={() => handleBtnName('electronics')}>Electronics</button>
-                        </Link>
-                        <Link to="lamps">
-                            <button onClick={() => handleBtnName('lamps')}>Lamps</button>
-                        </Link>
-                        <Link to="kitchen">
-                            <button onClick={() => handleBtnName('kitchen')}>Kitchen</button>
-                        </Link>
-                        <Link to="chairs">
-                            <button onClick={() => handleBtnName('chairs')}>Chairs</button>
-                        </Link>
-                        <Link to="skin-care">
-                            <button onClick={() => handleBtnName('skin care')}>Skin Care</button>
-                        </Link>
+                        </NavLink>
+                        <NavLink
+                            to="furnitures"
+                            className={({ isActive }) => (isActive ? 'active' : '')}
+                            onClick={() => handleBtnName('furnitures')}
+                        >
+                            <button>Furnitures</button>
+                        </NavLink>
+                        <NavLink
+                            to="electronics"
+                            className={({ isActive }) => (isActive ? 'active' : '')}
+                            onClick={() => handleBtnName('electronics')}
+                        >
+                            <button>Electronics</button>
+                        </NavLink>
+                        <NavLink
+                            to="lamps"
+                            className={({ isActive }) => (isActive ? 'active' : '')}
+                            onClick={() => handleBtnName('lamps')}
+                        >
+                            <button>Lamps</button>
+                        </NavLink>
+                        <NavLink
+                            to="kitchen"
+                            className={({ isActive }) => (isActive ? 'active' : '')}
+                            onClick={() => handleBtnName('kitchen')}
+                        >
+                            <button>Kitchen</button>
+                        </NavLink>
+                        <NavLink
+                            to="chairs"
+                            className={({ isActive }) => (isActive ? 'active' : '')}
+                            onClick={() => handleBtnName('chairs')}
+                        >
+                            <button>Chairs</button>
+                        </NavLink>
+                        <NavLink
+                            to="skin-care"
+                            className={({ isActive }) => (isActive ? 'active' : '')}
+                            onClick={() => handleBtnName('skin care')}
+                        >
+                            <button>Skin Care</button>
+                        </NavLink>
                     </div>
                 </div>
             </div>
