@@ -1,0 +1,287 @@
+.product-page-div {
+    padding-top: 140px;
+}
+
+.product-div {
+    /* height: 100%; */
+    margin-bottom: 100px;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.product-big-name {
+    position: absolute;
+    font-size: 35px;
+    top: 8px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.product-left {
+    width: 50%;
+    height: 100%;
+    padding-top: 50px;
+}
+
+.big-img {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.big-img img {
+    width: 75%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.small-imgs {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.small-imgs img {
+    width: 22%;
+    height: 20%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.small-imgs img:hover {
+    outline: 1px solid rgba(0, 0, 0, 0.3);
+
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.18);
+    -moz-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.18);
+    box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.18);
+}
+
+.product-right {
+    width: 50%;
+    height: 100%;
+    background-color: #E5E5E5;
+    padding: 160px 50px 80px 50px;
+}
+
+.product-spec {
+    font-size: 20px;
+    margin-bottom: 50px;
+    line-height: 1.5;
+}
+
+.product-quant {
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    margin-bottom: 50px;
+    font-weight: 600;
+    align-items: center;
+}
+
+.product-btns {
+    display: flex;
+    border: 1px solid black;
+}
+
+.product-btns button {
+    font-size: 30px;
+    width: 55px;
+    height: 55px;
+    color: black;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    transition: all 0.2s;
+}
+
+.product-btns button:first-child {
+    border-right: 1px solid black;
+}
+
+.product-btns button:last-child {
+    border-left: 1px solid black;
+}
+
+.product-btns button:hover {
+    background-color: transparent;
+}
+
+.product-btns p {
+    outline-offset: -2px;
+    width: 60px;
+    height: 50px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.atc-buy {
+    display: flex;
+    gap: 20px;
+}
+
+.atc-buy button {
+    width: 50%;
+    height: 55px;
+    border: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.atc-btn {
+    background-color: transparent;
+    border: 2px solid black !important;
+}
+
+.atc-btn:hover {
+    color: white;
+    background-color: black;
+}
+
+.buy-btn {
+    background-color: #B6002C;
+    color: white;
+    border: 2px solid #B6002C !important;
+}
+
+.buy-btn:hover {
+    background-color: transparent;
+    color: #B6002C;
+}
+
+.specifications {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 100px;
+}
+
+.spec {
+    background-color: #E5E5E5;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.spec-title {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.title-desc {
+    font-size: 16.5px;
+}
+
+/* notify */
+
+.notify {
+    color: white;
+    background-color: #373737;
+    padding: 12px 22px;
+    z-index: 999999999;
+    font-size: 20px;
+    position: absolute;
+    transform: translate(-50%);
+    top: -100%;
+    left: 50%;
+}
+
+.notify.slide-in {
+    animation-duration: 4s;
+    animation-delay: -1s;
+    animation-name: slidein;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slidein {
+    0% {
+        top: -100%;
+    }
+
+    40% {
+        top: 90px;
+    }
+
+    60% {
+        top: 90px;
+    }
+
+    100% {
+        top: -100%;
+    }
+}
+
+@media (max-width:900px) {
+    .product-right {
+        padding: 160px 20px 80px 20px;
+    }
+}
+
+@media (max-width:850px) {
+    .product-div {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 60px;
+
+    }
+
+    .product-right {
+        width: 100%;
+        padding: 30px 20px 40px 20px;
+    }
+
+    .product-left {
+        width: 100%;
+    }
+
+    .product-big-name {
+        width: 310px;
+        text-align: center;
+    }
+}
+
+@media (max-width:570px) {
+
+    .specifications {
+        gap: 20px;
+        flex-direction: column;
+        margin-bottom: 280px;
+    }
+}
+
+@media (max-width:450px) {
+    .product-quant {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .product-spec {
+        margin-bottom: 20px;
+    }
+
+    .atc-buy {
+        gap: 20px;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .atc-buy button {
+        width: 100%;
+    }
+
+
+}

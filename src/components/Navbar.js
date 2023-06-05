@@ -1,13 +1,19 @@
+import { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark, faCartShopping } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { CartContext } from '../pages/ProductPage';
+import CartWithItem from './CartWithItem';
+import EmptyCart from './EmptyCart';
 import LogoImg2 from '../img/newlogo2.png';
 import '../css/Header.css';
 
-function Header() {
+function Navbar() {
     const [Toggle, setToggle] = useState(false);
     const [Sticky, SetSticky] = useState(false);
+
+    const [cart, setCart] = useState(false);
+    const { cartItem } = useContext(CartContext);
 
     const handleScroll = () => {
         if (window.scrollY >= 10) {
@@ -16,6 +22,11 @@ function Header() {
             SetSticky(false);
         }
     };
+
+    const openCart = () => {
+        setCart(!cart);
+    };
+
     window.addEventListener('scroll', handleScroll);
 
     const scrollToTop = () => {
@@ -27,6 +38,20 @@ function Header() {
 
     return (
         <>
+            {/* overlay */}
+            <div onClick={openCart} className={`page-overlay ${cart ? 'open-flex' : 'closed-flex'}`}></div>
+
+            {/* cart */}
+            <div className={`cart-div ${cart ? 'open-cart' : 'closed-cart'}`}>
+                <div className="cart-title-btn">
+                    <h2 className="cart-full-h2">Your Shopping Cart ({cartItem.length})</h2>
+                    <FontAwesomeIcon onClick={openCart} icon={faXmark} />
+                </div>
+
+                <div className="cart-body">
+                    {cartItem.length < 1 ? <EmptyCart openCart={openCart} /> : <CartWithItem />}
+                </div>
+            </div>
             <header>
                 <div className="container">
                     <div className={`nav-container ${Sticky ? 'cont-sticky' : ''}`}>
@@ -44,17 +69,26 @@ function Header() {
                                     <Link to="/categories/all">CATEGORIES</Link>
                                 </li>
                                 <li>
-                                    <Link to="/">PRODUCT PAGE</Link>
+                                    <Link to="/categories/product/1">PRODUCT PAGE</Link>
                                 </li>
                                 <li className="close">
                                     <FontAwesomeIcon icon={faXmark} className="menu-close" />
                                 </li>
                             </ul>
                             <div className="nav-cart">
-                                <span>0</span>
-                                <Link to="/cart" className="cart">
-                                    <FontAwesomeIcon icon={faCartShopping} />
-                                </Link>
+                                <div className="cart">
+                                    <sapn
+                                        data-array-length={cartItem.length}
+                                        onClick={openCart}
+                                        className={`${cartItem.length < 1 ? 'cart-icon' : 'cart-icon with-items'}`}
+                                    ></sapn>
+                                    <FontAwesomeIcon
+                                        data-array-length={cartItem.length}
+                                        onClick={openCart}
+                                        className={`${cartItem.length < 1 ? 'cart-icon' : 'cart-icon with-items'}`}
+                                        icon={faCartShopping}
+                                    />
+                                </div>
                             </div>
                         </nav>
                     </div>
@@ -63,4 +97,4 @@ function Header() {
         </>
     );
 }
-export default Header;
+export default Navbar;
