@@ -365,3 +365,25 @@ header .close {
         top: 0;
     }
 }
+
+@media (max-width: 500px) {
+    .open-cart {
+        right: 0;
+    }
+
+    .closed-cart {
+        right: -140%;
+    }
+
+    .cart-div {
+        width: 360px;
+    }
+
+    /* .full-cart {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    } */
+}
